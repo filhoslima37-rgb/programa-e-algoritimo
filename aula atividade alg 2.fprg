@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="aula atividade alg 2"/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-08-17 07:25:21 "/>
+        <attribute name="created" value="dXNlcjtERVNLVE9QLThPRlYzSFY7MjAyNi0wOC0xNzsiMDY6MzE6NDggIjsyNzMz"/>
+        <attribute name="edited" value="dXNlcjtERVNLVE9QLThPRlYzSFY7MjAyNi0wOC0xNzsiMDc6MjU6MjEgIjsyOzI4Mzc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="temperatura" type="Real" array="False" size=""/>
+            <while expression="true">
+                <assign variable="temperatura" expression="40.0 + (Random(550) / 10.0)"/>
+                <output expression="&quot;Temperatura Atual do Computador: &quot; &amp; temperatura &amp; &quot; &#176;C&quot;" newline="True"/>
+                <if expression="temperatura &gt; 80.0">
+                    <then>
+                        <output expression="&quot;STATUS: [ALERTA] Risco de superaquecimento!&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;STATUS: [NORMAL] Sistema operando com seguran&#231;a.&quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
