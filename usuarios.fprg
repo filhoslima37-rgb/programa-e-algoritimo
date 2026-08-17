@@ -1,25 +1,34 @@
 <?xml version="1.0"?>
 <flowgorithm fileversion="4.2">
     <attributes>
-        <attribute name="name" value="ListaUsuarios"/>
+        <attribute name="name" value="SistemaLogsAcesso"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="usuarios" type="String" array="True" size="5"/>
+            <declare name="logUsuario" type="String" array="True" size="4"/>
+            <declare name="logDataHora" type="String" array="True" size="4"/>
+            <declare name="logStatus" type="String" array="True" size="4"/>
             <declare name="i" type="Integer" array="False" size=""/>
-            <assign variable="usuarios[0]" expression="&quot;Administrador&quot;"/>
-            <assign variable="usuarios[1]" expression="&quot;Ana_Silva&quot;"/>
-            <assign variable="usuarios[2]" expression="&quot;Suporte_TI&quot;"/>
-            <assign variable="usuarios[3]" expression="&quot;Carlos_Dev&quot;"/>
-            <assign variable="usuarios[4]" expression="&quot;Usuario_Convidado&quot;"/>
-            <output expression="&quot;=========================================&quot;" newline="True"/>
-            <output expression="&quot;   RELATORIO DE ACESSOS AO COMPUTADOR    &quot;" newline="True"/>
-            <output expression="&quot;=========================================&quot;" newline="True"/>
-            <for variable="i" start="0" end="4" direction="inc" step="1">
-                <output expression="&quot; &gt; Usuario: &quot; &amp; usuarios[i]" newline="True"/>
+            <assign variable="logUsuario[0]" expression="&quot;root_admin&quot;"/>
+            <assign variable="logDataHora[0]" expression="&quot;2026-08-17 08:32:11&quot;"/>
+            <assign variable="logStatus[0]" expression="&quot;SUCESSO&quot;"/>
+            <assign variable="logUsuario[1]" expression="&quot;anonimo_user&quot;"/>
+            <assign variable="logDataHora[1]" expression="&quot;2026-08-17 09:15:44&quot;"/>
+            <assign variable="logStatus[1]" expression="&quot;FALHA (Senha Incorreta)&quot;"/>
+            <assign variable="logUsuario[2]" expression="&quot;carlos_dev&quot;"/>
+            <assign variable="logDataHora[2]" expression="&quot;2026-08-17 11:02:19&quot;"/>
+            <assign variable="logStatus[2]" expression="&quot;SUCESSO&quot;"/>
+            <assign variable="logUsuario[3]" expression="&quot;marta_financeiro&quot;"/>
+            <assign variable="logDataHora[3]" expression="&quot;2026-08-17 14:55:01&quot;"/>
+            <assign variable="logStatus[3]" expression="&quot;SUCESSO&quot;"/>
+            <output expression="&quot;=========================================================&quot;" newline="True"/>
+            <output expression="&quot;       PAINEL DE AUDITORIA - LOGS DE ACESSO DO SISTEMA    &quot;" newline="True"/>
+            <output expression="&quot;=========================================================&quot;" newline="True"/>
+            <for variable="i" start="0" end="3" direction="inc" step="1">
+                <output expression="&quot;[&quot; &amp; logDataHora[i] &amp; &quot;] Usu&#225;rio: &quot; &amp; logUsuario[i] &amp; &quot; | Status: &quot; &amp; logStatus[i]" newline="True"/>
             </for>
-            <output expression="&quot;=========================================&quot;" newline="True"/>
+            <output expression="&quot;=========================================================&quot;" newline="True"/>
         </body>
     </function>
 </flowgorithm>
