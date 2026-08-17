@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ListaUsuarios"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="usuarios" type="String" array="True" size="5"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="usuarios[0]" expression="&quot;Administrador&quot;"/>
+            <assign variable="usuarios[1]" expression="&quot;Ana_Silva&quot;"/>
+            <assign variable="usuarios[2]" expression="&quot;Suporte_TI&quot;"/>
+            <assign variable="usuarios[3]" expression="&quot;Carlos_Dev&quot;"/>
+            <assign variable="usuarios[4]" expression="&quot;Usuario_Convidado&quot;"/>
+            <output expression="&quot;=========================================&quot;" newline="True"/>
+            <output expression="&quot;   RELATORIO DE ACESSOS AO COMPUTADOR    &quot;" newline="True"/>
+            <output expression="&quot;=========================================&quot;" newline="True"/>
+            <for variable="i" start="0" end="4" direction="inc" step="1">
+                <output expression="&quot; &gt; Usuario: &quot; &amp; usuarios[i]" newline="True"/>
+            </for>
+            <output expression="&quot;=========================================&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
