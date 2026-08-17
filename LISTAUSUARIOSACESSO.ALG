@@ -1,27 +1,39 @@
-algoritmo "ListaUsuariosAcesso"
+algoritmo "SistemaLogsAcesso"
 var
-   // Cria um vetor (lista) para guardar até 5 nomes de usuários
-   usuarios: vetor [1..5] de caractere
+   // Vetores para armazenar os detalhes do log (simulando 4 registros)
+   log_usuario: vetor [1..4] de caractere
+   log_datahora: vetor [1..4] de caractere
+   log_status: vetor [1..4] de caractere
    i: inteiro
 inicio
-   // Cadastro simulado dos usuários que acessaram o PC
-   usuarios[1] <- "Administrador"
-   usuarios[2] <- "Ana_Silva"
-   usuarios[3] <- "Suporte_TI"
-   usuarios[4] <- "Carlos_Dev"
-   usuarios[5] <- "Usuario_Convidado"
+   // Carga inicial de dados (Simulação dos logs gerados pelo sistema)
+   log_usuario[1] <- "root_admin"
+   log_datahora[1] <- "2026-08-17 08:32:11"
+   log_status[1]  <- "SUCESSO"
 
-   // Exibição do relatório de acessos
-   escreval("=========================================")
-   escreval("   RELATÓRIO DE ACESSOS AO COMPUTADOR    ")
-   escreval("=========================================")
-   escreval("Usuários que fizeram login recentemente:")
-   escreval("-----------------------------------------")
+   log_usuario[2] <- "anonimo_user"
+   log_datahora[2] <- "2026-08-17 09:15:44"
+   log_status[2]  <- "FALHA (Senha Incorreta)"
 
-   // Laço para percorrer a lista e mostrar nome por nome
-   para i de 1 ate 5 faca
-      escreval(" > ID: ", i, " | Usuário: ", usuarios[i])
+   log_usuario[3] <- "carlos_dev"
+   log_datahora[3] <- "2026-08-17 11:02:19"
+   log_status[3]  <- "SUCESSO"
+
+   log_usuario[4] <- "marta_financeiro"
+   log_datahora[4] <- "2026-08-17 14:55:01"
+   log_status[4]  <- "SUCESSO"
+
+   // Exibição do Painel de Auditoria de Logs
+   escreval("=========================================================")
+   escreval("       PAINEL DE AUDITORIA - LOGS DE ACESSO DO SISTEMA    ")
+   escreval("=========================================================")
+   escreval(" DATA / HORA          | USUÁRIO          | STATUS        ")
+   escreval("---------------------------------------------------------")
+
+   // Laço para ler os vetores e organizar as colunas na tela
+   para i de 1 ate 4 faca
+      escreval(" ", log_datahora[i], " | ", log_usuario[i]:16, " | ", log_status[i])
    fimpara
 
-   escreval("=========================================")
+   escreval("=========================================================")
 fimalgoritmo
