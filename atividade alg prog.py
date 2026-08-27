@@ -1,0 +1,5 @@
+celsius = float(input("Informe a temperatura em graus Celsius: "))
+
+fahrenheit = (celsius * 9 / 5) + 32
+
+print(fahrenheit)
